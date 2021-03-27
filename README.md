@@ -1,3 +1,15 @@
+# Blitzjs minimal repro with react-query: when the query param change no request are made
+
+1. Clone the repo, install deps
+2. Run seeds: `blitz db seed`
+3. Start the project `yarn dev`
+4. Create an account
+5. Go to http://localhost:3000/projects and try to search a person by name _(nothing happen)_. Remove one char from the search input and the request is triggered
+
+ℹ️ `suspense` is disabled and `useInfiniteQuery` have `initialData` from `getServerSideProps`. If `initialData` commented, the search works well
+
+---
+
 [![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
 
 This is a [Blitz.js](https://github.com/blitz-js/blitz) app.

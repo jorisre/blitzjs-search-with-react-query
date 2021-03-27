@@ -1,4 +1,5 @@
-// import db from "./index"
+import faker from "faker"
+import db from "./index"
 
 /*
  * This seed function is executed when you run `blitz db seed`.
@@ -8,9 +9,9 @@
  * realistic data.
  */
 const seed = async () => {
-  // for (let i = 0; i < 5; i++) {
-  //   await db.project.create({ data: { name: "Project " + i } })
-  // }
+  for (let i = 0; i < 45; i++) {
+    await db.project.create({ data: { name: faker.name.findName() } })
+  }
 }
 
 export default seed
